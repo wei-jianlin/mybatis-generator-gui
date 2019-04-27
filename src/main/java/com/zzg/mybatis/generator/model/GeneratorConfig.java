@@ -28,6 +28,10 @@ public class GeneratorConfig {
 
 	private String mapperName;
 
+	private String publicDaoTargetPackage;
+
+	private String publicDaoTargetProject;
+
 	private String mappingXMLPackage;
 
 	private String mappingXMLTargetFolder;
@@ -201,6 +205,21 @@ public class GeneratorConfig {
     public void setNeedToStringHashcodeEquals(boolean needToStringHashcodeEquals) {
         this.needToStringHashcodeEquals = needToStringHashcodeEquals;
     }
+	public String getPublicDaoTargetPackage() {
+		return publicDaoTargetPackage;
+	}
+
+	public void setPublicDaoTargetPackage(String publicDaoTargetPackage) {
+		this.publicDaoTargetPackage = publicDaoTargetPackage;
+	}
+
+	public String getPublicDaoTargetProject() {
+		return publicDaoTargetProject;
+	}
+
+	public void setPublicDaoTargetProject(String publicDaoTargetProject) {
+		this.publicDaoTargetProject = publicDaoTargetProject;
+	}
 
 	public boolean isNeedForUpdate() {
 		return needForUpdate;

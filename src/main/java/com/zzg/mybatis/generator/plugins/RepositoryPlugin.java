@@ -26,7 +26,7 @@ public class RepositoryPlugin extends PluginAdapter {
     }
 
     @Override
-    public boolean clientGenerated(Interface interfaze, TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
+    public boolean clientGenerated(Interface interfaze, IntrospectedTable introspectedTable) {
         interfaze.addImportedType(annotationRepository);
         interfaze.addAnnotation(annotation);
         return true;

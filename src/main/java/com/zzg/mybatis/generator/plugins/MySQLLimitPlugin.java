@@ -29,43 +29,35 @@ public class MySQLLimitPlugin extends PluginAdapter {
         PrimitiveTypeWrapper integerWrapper = FullyQualifiedJavaType.getIntInstance().getPrimitiveTypeWrapper();
         PrimitiveTypeWrapper longWrapper = new FullyQualifiedJavaType("long").getPrimitiveTypeWrapper();
 
-        Field limit = new Field();
-        limit.setName("limit");
+        Field limit = new Field("limit",integerWrapper);
         limit.setVisibility(JavaVisibility.PRIVATE);
-        limit.setType(integerWrapper);
         topLevelClass.addField(limit);
 
-        Method setLimit = new Method();
+        Method setLimit = new Method("setLimit");
         setLimit.setVisibility(JavaVisibility.PUBLIC);
-        setLimit.setName("setLimit");
         setLimit.addParameter(new Parameter(integerWrapper, "limit"));
         setLimit.addBodyLine("this.limit = limit;");
         topLevelClass.addMethod(setLimit);
 
-        Method getLimit = new Method();
+        Method getLimit = new Method("getLimit");
         getLimit.setVisibility(JavaVisibility.PUBLIC);
         getLimit.setReturnType(integerWrapper);
-        getLimit.setName("getLimit");
         getLimit.addBodyLine("return limit;");
         topLevelClass.addMethod(getLimit);
 
-        Field offset = new Field();
-        offset.setName("offset");
+        Field offset = new Field("offset",longWrapper);
         offset.setVisibility(JavaVisibility.PRIVATE);
-        offset.setType(longWrapper);
         topLevelClass.addField(offset);
 
-        Method setOffset = new Method();
+        Method setOffset = new Method("setOffset");
         setOffset.setVisibility(JavaVisibility.PUBLIC);
-        setOffset.setName("setOffset");
         setOffset.addParameter(new Parameter(longWrapper, "offset"));
         setOffset.addBodyLine("this.offset = offset;");
         topLevelClass.addMethod(setOffset);
 
-        Method getOffset = new Method();
+        Method getOffset = new Method("getOffset");
         getOffset.setVisibility(JavaVisibility.PUBLIC);
         getOffset.setReturnType(longWrapper);
-        getOffset.setName("getOffset");
         getOffset.addBodyLine("return offset;");
         topLevelClass.addMethod(getOffset);
 

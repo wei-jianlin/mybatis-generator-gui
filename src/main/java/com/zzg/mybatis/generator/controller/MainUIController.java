@@ -45,6 +45,9 @@ public class MainUIController extends BaseFXController {
 
     private static final Logger _LOG = LoggerFactory.getLogger(MainUIController.class);
     private static final String FOLDER_NO_EXIST = "部分目录不存在，是否创建";
+    public static String publicDaoTargetPackage_ = "";
+    public static String publicDaoTargetProject_ = "";
+
     // tool bar buttons
     @FXML
     private Label connectionLabel;
@@ -68,6 +71,10 @@ public class MainUIController extends BaseFXController {
     private TextField mappingTargetProject;
     @FXML
     private TextField daoTargetProject;
+    @FXML
+    private TextField publicDaoTargetPackage;
+    @FXML
+    private TextField publicDaoTargetProject;
     @FXML
     private TextField mapperName;
     @FXML
@@ -209,7 +216,7 @@ public class MainUIController extends BaseFXController {
                         this.tableName = tableName;
                         tableNameField.setText(tableName);
                         domainObjectNameField.setText(MyStringUtils.dbStringToCamelStyle(tableName));
-                        mapperName.setText(domainObjectNameField.getText().concat("DAO"));
+                        mapperName.setText(domainObjectNameField.getText().concat("Dao"));
                     }
                 }
             });
@@ -367,6 +374,10 @@ public class MainUIController extends BaseFXController {
         generatorConfig.setModelPackageTargetFolder(modelTargetProject.getText());
         generatorConfig.setDaoPackage(daoTargetPackage.getText());
         generatorConfig.setDaoTargetFolder(daoTargetProject.getText());
+        generatorConfig.setPublicDaoTargetPackage(publicDaoTargetPackage.getText());
+        generatorConfig.setPublicDaoTargetProject(publicDaoTargetProject.getText());
+        publicDaoTargetPackage_ = publicDaoTargetPackage.getText();
+        publicDaoTargetProject_ = projectFolderField.getText() + "/" + publicDaoTargetProject.getText();
         generatorConfig.setMapperName(mapperName.getText());
         generatorConfig.setMappingXMLPackage(mapperTargetPackage.getText());
         generatorConfig.setMappingXMLTargetFolder(mappingTargetProject.getText());
@@ -396,6 +407,8 @@ public class MainUIController extends BaseFXController {
         modelTargetProject.setText(generatorConfig.getModelPackageTargetFolder());
         daoTargetPackage.setText(generatorConfig.getDaoPackage());
 		daoTargetProject.setText(generatorConfig.getDaoTargetFolder());
+        publicDaoTargetProject.setText(generatorConfig.getPublicDaoTargetProject());
+        publicDaoTargetPackage.setText(generatorConfig.getPublicDaoTargetPackage());
 		mapperName.setText(generatorConfig.getMapperName());
 		mapperTargetPackage.setText(generatorConfig.getMappingXMLPackage());
         mappingTargetProject.setText(generatorConfig.getMappingXMLTargetFolder());
@@ -459,6 +472,7 @@ public class MainUIController extends BaseFXController {
 		dirs.add(FilenameUtils.normalize(config.getProjectFolder().concat("/").concat(config.getModelPackageTargetFolder())));
 		dirs.add(FilenameUtils.normalize(config.getProjectFolder().concat("/").concat(config.getDaoTargetFolder())));
 		dirs.add(FilenameUtils.normalize(config.getProjectFolder().concat("/").concat(config.getMappingXMLTargetFolder())));
+        dirs.add(FilenameUtils.normalize(config.getProjectFolder().concat("/").concat(config.getPublicDaoTargetProject())));
 		boolean haveNotExistFolder = false;
 		for (String dir : dirs) {
 			File file = new File(dir);
