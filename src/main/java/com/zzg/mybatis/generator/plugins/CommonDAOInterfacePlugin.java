@@ -105,7 +105,7 @@ public class CommonDAOInterfacePlugin extends PluginAdapter {
         interfaze.addJavaDocLine(" * " + interfaze.getType().getShortName() + "继承基类");
         interfaze.addJavaDocLine(" */");
 
-        String daoSuperClass = interfaze.getType().getPackageName() + DEFAULT_DAO_SUPER_CLASS;
+        String daoSuperClass = MainUIController.publicDaoTargetPackage_ + DEFAULT_DAO_SUPER_CLASS;
         FullyQualifiedJavaType daoSuperType = new FullyQualifiedJavaType(daoSuperClass);
 
         String targetPackage = introspectedTable.getContext().getJavaModelGeneratorConfiguration().getTargetPackage();
@@ -125,9 +125,8 @@ public class CommonDAOInterfacePlugin extends PluginAdapter {
         daoSuperType.addTypeArgument(primaryKeyTypeJavaType);
 		interfaze.addImportedType(primaryKeyTypeJavaType);
 
-        String exampleType = introspectedTable.getExampleType();
-        FullyQualifiedJavaType exampleTypeJavaType = new FullyQualifiedJavaType(exampleType);
-        interfaze.addImportedType(exampleTypeJavaType);
+        FullyQualifiedJavaType daoSuperJavaType = new FullyQualifiedJavaType(daoSuperClass);
+        interfaze.addImportedType(daoSuperJavaType);
         interfaze.addImportedType(baseModelJavaType);
         interfaze.addImportedType(daoSuperType);
         interfaze.addSuperInterface(daoSuperType);
