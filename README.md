@@ -5,7 +5,7 @@ mybatis-generator-gui
 mybatis-generator-gui是基于[mybatis generator](http://www.mybatis.org/generator/index.html)开发一款界面工具, 本工具可以使你非常容易及快速生成Mybatis的Java POJO文件及数据库Mapping文件。
 
 
-![image](C:\Users\weiJianlin\Pictures\TIM截图20190510153846.png)
+![image](https://github.com/wei-jianlin/mybatis-generator-gui/tree/master/readmeimages/TIM截图20190510153846.png)
 
 
 ![basic](https://user-images.githubusercontent.com/3505708/51911610-45754980-240d-11e9-85ad-643e55cafab2.png)
