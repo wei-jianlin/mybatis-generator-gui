@@ -1,9 +1,11 @@
 mybatis-generator-gui
 ==============
+本项目是在[zouzg项目](https://github.com/zouzg/mybatis-generator-gui)上进行小幅改动.增加了自定义公共DAO接口包路径,以及使用公共QueryExample,不会再生成EntiyQueryExample.
 
 mybatis-generator-gui是基于[mybatis generator](http://www.mybatis.org/generator/index.html)开发一款界面工具, 本工具可以使你非常容易及快速生成Mybatis的Java POJO文件及数据库Mapping文件。
 
-![image](https://user-images.githubusercontent.com/3505708/49334784-1a42c980-f619-11e8-914d-9ea85db9cec3.png)
+
+![image](C:\Users\weiJianlin\Pictures\TIM截图20190510153846.png)
 
 
 ![basic](https://user-images.githubusercontent.com/3505708/51911610-45754980-240d-11e9-85ad-643e55cafab2.png)
@@ -22,9 +24,6 @@ mybatis-generator-gui是基于[mybatis generator](http://www.mybatis.org/generat
 
 ### 要求
 本工具由于使用了Java 8的众多特性，所以要求JDK <strong>1.8.0.60</strong>以上版本，另外<strong>JDK 1.9</strong>暂时还不支持。
-
-### 下载
-你可以从本链接下载本工具: http://tools.mingzhi.ink
 
 
 ### 启动本软件
@@ -67,8 +66,8 @@ Eclipse or IntelliJ IDEA中启动, 找到```com.zzg.mybatis.generator.MainUI```�
 
 
 ### 文档
-更多详细文档请参考本库的Wiki
-* [Usage](https://github.com/astarring/mybatis-generator-gui/wiki/Usage-Guide)
+更多详细文档请参考zouzg的Wiki
+* [zouzg项目](https://github.com/zouzg/mybatis-generator-gui)
 
 
 ### 贡献
@@ -77,16 +76,8 @@ Eclipse or IntelliJ IDEA中启动, 找到```com.zzg.mybatis.generator.MainUI```�
 * 对于有Bug的地方，请按如下方式在Issue中提bug
     * 如何重现你的bug，包括你使用的系统，JDK版本，数据库类型及版本
     * 如果有任何的错误截图会更好
-    * 如果你是一些常见的数据库连接、软件启动不了等问题，请先仔细阅读上面的文档，再解决不了在下面的QQ群中问（问问题的时候尽量把各种信息都提供好，否则只是几行文字是没有人愿意为你解答的）。
-    
-### QQ群
-鉴于有的同学可能有一些特殊情况不能使用，我建了一个QQ群供大家交流，QQ群号：613911142（已满），608454894
 
-### 赞助
-本工具纯属个人业余时间开发与维护，如果你觉得软件对你有用，欢迎赞助，金额随意 :)
-
-<img src="https://user-images.githubusercontent.com/3505708/38162358-423d2d18-3512-11e8-9b52-c188bf37671d.png" width="200"> <img src="https://user-images.githubusercontent.com/3505708/38162365-56f8f55c-3512-11e8-8fd8-b8ae4f0ad3c8.png" width="200">
 - - -
 Licensed under the Apache 2.0 License
 
-Copyright 2017 by Owen Zou
+Copyright 2017 by wei-jianlin
